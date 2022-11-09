@@ -1,0 +1,81 @@
+[
+  {
+    "id": 1279,
+    "typeId": 6,
+    "serviceId": 262,
+    "label": "Balkon şekli nasıl? Kaç cephe kapatılacak?",
+    "required": true,
+    "unit": null,
+    "pageNumber": 1,
+    "values": [
+      {
+        "id": 8174,
+        "value": "Gömme balkon (1 cephe)",
+        "valueOrder": 0
+      },
+      {
+        "id": 8171,
+        "value": "L balkon (2 cephe)",
+        "valueOrder": 1
+      },
+      {
+        "id": 8172,
+        "value": "U balkon (3 cephe)",
+        "valueOrder": 2
+      },
+      {
+        "id": 8173,
+        "value": "Yay balkon (yuvarlak)",
+        "valueOrder": 3
+      }
+    ],
+    "placeHolder": null,
+    "description": null
+  },
+  {
+    "id": 1280,
+    "typeId": 6,
+    "serviceId": 262,
+    "label": "Cam nasıl açılsın?",
+    "order": 3,
+    "required": true,
+    "unit": null,
+    "pageNumber": 2,
+    "values": [
+      {
+        "id": 8175,
+        "value": "Sürgülü",
+        "valueOrder": 0
+      },
+      {
+        "id": 8176,
+        "value": "Katlanır",
+        "valueOrder": 1
+      },
+      {
+        "id": 8177,
+        "value": "Sabit ve pencereli",
+        "valueOrder": 2
+      },
+      {
+        "id": 8188,
+        "value": "Diğer",
+        "valueOrder": 3
+      }
+    ],
+    "placeHolder": null,
+    "description": null
+  },
+  {
+    "id": 1282,
+    "typeId": 8,
+    "serviceId": 262,
+    "label": "İhtiyacın detayları neler?",
+    "required": false,
+    "unit": null,
+    "pageNumber": 4,
+    "values": null,
+    "placeHolder": "Aklına gelen başka önemli bir detay var mı?",
+    "description": null
+  }
+]

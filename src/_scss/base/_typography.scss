@@ -1,0 +1,63 @@
+html,
+body {
+  font-family: $fontFamily, sans-serif;
+  font-weight: 500;
+  color: $black-light;
+  font-size: $medium;
+}
+
+// Header Styles
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+h1 {
+  font-size: $headingSize;
+  @extend .l-22;
+}
+
+p {
+  margin: 0;
+}
+
+.small {
+  font-size: $small;
+}
+
+.medium {
+  font-size: $medium;
+}
+
+.large {
+  font-size: $large;
+}
+
+.l-16 {
+  line-height: 16px;
+}
+
+.l-18 {
+  line-height: 18px;
+}
+
+.l-20 {
+  line-height: 20px;
+}
+
+.l-22 {
+  line-height: 22px;
+}
+
+// Text Styles
+
+strong {
+  font-weight: 700;
+}
+.uppercase {
+  text-transform: uppercase;
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "id": 446,
+    "typeId": 5,
+    "serviceId": 399,
+    "label": "Nereye yapılacak?",
+    "required": false,
+    "pageNumber": 0,
+    "values": [
+      {
+        "id": 2061,
+        "value": "Pencere",
+        "valueOrder": 0,
+        "valueImageUrl": "https://cdn.armut.com//images/serviceoptions/f2e2d3c6-86d2-4307-a31c-537bef55c990.png"
+      },
+      {
+        "id": 2062,
+        "value": "Balkon kapısı",
+        "valueOrder": 1,
+        "valueImageUrl": "https://cdn.armut.com//images/serviceoptions/f2e2d3c6-86d2-4307-a31c-537bef55c990.png"
+      },
+      {
+        "id": 2063,
+        "value": "Balkon korkuluğu",
+        "valueOrder": 2,
+        "valueImageUrl": "https://cdn.armut.com//images/serviceoptions/624d295e-ce02-4ea0-9228-4140f5ca8110.png"
+      },
+      {
+        "id": 2064,
+        "value": "Bina dış kapısı",
+        "valueOrder": 3,
+        "valueImageUrl": "https://cdn.armut.com//images/serviceoptions/d388664e-003f-4b4b-a77f-12ce97cfdd36.png"
+      },
+      {
+        "id": 2065,
+        "value": "Merdiven korkuluğu",
+        "valueOrder": 4,
+        "valueImageUrl": "https://cdn.armut.com//images/serviceoptions/0a6a454c-57cb-49af-a54e-36a28e90b342.png"
+      },
+      {
+        "id": 2066,
+        "value": "Bahçe kapısı",
+        "valueOrder": 5,
+        "valueImageUrl": "https://cdn.armut.com//images/serviceoptions/1f1beb2f-0760-4650-af9a-aa3f1200c8f2.png"
+      },
+      {
+        "id": 2067,
+        "value": "Bahçe korkuluğu",
+        "valueOrder": 6,
+        "valueImageUrl": "https://cdn.armut.com//images/serviceoptions/8cdde4b1-9553-499f-ac7b-140b6955d9ae.png"
+      },
+      {
+        "id": 2068,
+        "value": "Diğer",
+        "valueOrder": 7,
+        "valueImageUrl": "https://cdn.armut.com//images/serviceoptions/66bc68bd-947c-4940-a56a-c53ad1a62c95.png"
+      }
+    ],
+    "placeHolder": null,
+    "description": null
+  },
+  {
+    "id": 453,
+    "typeId": 6,
+    "serviceId": 399,
+    "label": "Sökülmesi gereken eski demir var mı?",
+    "required": true,
+    "unit": null,
+    "pageNumber": 2,
+    "values": [
+      {
+        "id": 2076,
+        "value": "Evet, sökülmesi gerekiyor",
+        "valueOrder": 0
+      },
+      {
+        "id": 2077,
+        "value": "Hayır",
+        "valueOrder": 1
+      }
+    ],
+    "placeHolder": null,
+    "description": null
+  },
+  {
+    "id": 9000000,
+    "typeId": 8,
+    "serviceId": 399,
+    "label": "İhtiyacın detayları neler?",
+    "order": 5,
+    "required": false,
+    "unit": null,
+    "pageNumber": 4,
+    "values": null,
+    "placeHolder": "Aklına gelen başka önemli bir detay var mı?",
+    "description": null
+  }
+]

@@ -1,0 +1,39 @@
+.job-request {
+  font-weight: 700;
+}
+
+.header {
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-bar {
+  width: 30%;
+  height: 3px;
+  background-color: $green;
+}
+
+.price-detail {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 15px 0 24px;
+  align-items: center;
+  height: 51px;
+  box-shadow: 0px 1px 4px rgba(52, 58, 67, 0.08), 0px 1px 2px rgba(0, 0, 0, 0.08), 0px 0px 2px rgba(0, 0, 0, 0.1);
+
+  .currency {
+    margin-left: 4px;
+  }
+}
+
+.discount-banner {
+  display: flex;
+  justify-content: center;
+  background-color: $black-light;
+  color: $white;
+  align-items: center;
+  padding: 6px 17px;
+  height: 44px;
+}

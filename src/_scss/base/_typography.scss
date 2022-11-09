@@ -18,7 +18,7 @@ h6 {
 
 h1 {
   font-size: $headingSize;
-  @extend .l-22;
+  @extend .lh-22;
 }
 
 p {
@@ -37,19 +37,19 @@ p {
   font-size: $large;
 }
 
-.l-16 {
+.lh-16 {
   line-height: 16px;
 }
 
-.l-18 {
+.lh-18 {
   line-height: 18px;
 }
 
-.l-20 {
+.lh-20 {
   line-height: 20px;
 }
 
-.l-22 {
+.lh-22 {
   line-height: 22px;
 }
 

@@ -1,9 +1,11 @@
-import React from "react";
+import ServiceList from "../src/components/service/List";
 
 function App() {
   return (
     <div className="App">
-      <p>Armut Clone App</p>
+      <div className="home-page">
+        <ServiceList />
+      </div>
     </div>
   );
 }

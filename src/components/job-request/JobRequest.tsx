@@ -33,15 +33,17 @@ const JobRequest = () => {
   //   const question = state.questions.filter((question: any) => question.pageNumber == pageNumber)[0];
   //   console.log("question last: ", question);
 
-  const checkIsLastPage = (pageNumber: any, length: any) => {
-    return pageNumber == length;
-  };
-
   const calculateWidthOfProgress = (pageNumber: any, length: any) => {
     return Math.floor((Number(pageNumber) / length) * 100);
   };
 
   const widthOfProgress = calculateWidthOfProgress(pageNumber, state.questions.length);
+
+  const checkIsLastPage = (pageNumber: any, length: any) => {
+    return pageNumber == length;
+  };
+
+  const isLastPage = checkIsLastPage(pageNumber, state.questions.length);
 
   useEffect(() => {
     console.log("JobRequest useEffect!!!");
@@ -56,7 +58,7 @@ const JobRequest = () => {
         {discountRateText && pageNumber == 1 && <DiscountBanner discountRateText={discountRateText} />}
         <Question question={state.questions} />
       </div>
-      <StickyButton pageNumber={pageNumber} state={state} />
+      <StickyButton pageNumber={pageNumber} state={state} isLastPage={isLastPage} />
     </>
   );
 };

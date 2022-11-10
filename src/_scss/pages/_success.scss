@@ -1,0 +1,17 @@
+.success-page {
+  display: flex;
+  align-items: center;
+  height: 170px;
+  margin-top: 11px;
+  background-image: url("../../assets/confetti.png");
+
+  .image-text-section {
+    display: flex;
+    align-items: flex-end;
+  }
+
+  img {
+    margin-right: 24px;
+    margin-left: 16px;
+  }
+}

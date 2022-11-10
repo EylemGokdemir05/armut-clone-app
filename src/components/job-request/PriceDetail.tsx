@@ -2,7 +2,7 @@ const PriceDetail = ({ price }: { price: any }) => {
   const { min, max, currency } = price;
   return (
     <div className="price-detail">
-      <label className="small lh-16">Ortalama Fiyat Aralığı</label>
+      <label className="small lh-16">Ortalama Fiyat Aralığı:</label>
       <div>
         <label className="large lh-20">
           {min} - {max}

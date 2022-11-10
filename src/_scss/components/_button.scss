@@ -1,4 +1,11 @@
-.btn {
-  padding: 5px 18px;
-  border-radius: 0;
+.button {
+  font-family: $fontFamily;
+  font-weight: 700;
+  background-color: $green;
+  color: $white;
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  text-align: center;
+  padding: 13px 0;
 }

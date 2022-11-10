@@ -3,6 +3,7 @@ import ListItem from "./ListItem";
 
 const List = () => {
   const List = services.map((service) => {
+    console.log("list service: ", service);
     return <ListItem service={service} key={service.serviceId}></ListItem>;
   });
 

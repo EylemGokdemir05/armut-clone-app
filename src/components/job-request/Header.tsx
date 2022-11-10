@@ -5,7 +5,7 @@ interface ParamsState {
   pageNumber: any;
 }
 
-const Header = ({ name, state }: { name: any; state: any }) => {
+const Header = ({ name, state, widthOfProgress }: { name: any; state: any; widthOfProgress: any }) => {
   const history = useHistory();
   const params = useParams<ParamsState>();
   const pageNumber = params.pageNumber;
@@ -15,12 +15,12 @@ const Header = ({ name, state }: { name: any; state: any }) => {
   };
 
   const goPrevious = () => {
-    history.push(`/request/${pageNumber - 1}`, { state });
+    history.push(`/request/${Number(pageNumber) - 1}`, { state });
   };
 
   return (
     <div className="header">
-      <p className="small lh-18">{name}</p>
+      <p className="small lh-18">{widthOfProgress < 66 ? name : `%${widthOfProgress} TAMAMLANDI`}</p>
       <div className="close-icon" onClick={handleClose}>
         <img src={closeIcon}></img>
       </div>

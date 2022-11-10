@@ -5,6 +5,8 @@ import ProgressBar from "./ProgressBar";
 import PriceDetail from "./PriceDetail";
 import DiscountBanner from "./DiscountBanner";
 import Question from "./question/Question";
+import StickyButton from "./StickyButton";
+import { useEffect } from "react";
 
 interface ParamsState {
   pageNumber: any;
@@ -28,17 +30,34 @@ const JobRequest = () => {
   }
   console.log(pageNumber);
   console.log("questions: ", state.questions);
-  const question = state.questions.filter((question: any) => question.pageNumber == pageNumber)[0];
-  console.log(question);
+  //   const question = state.questions.filter((question: any) => question.pageNumber == pageNumber)[0];
+  //   console.log("question last: ", question);
+
+  const checkIsLastPage = (pageNumber: any, length: any) => {
+    return pageNumber == length;
+  };
+
+  const calculateWidthOfProgress = (pageNumber: any, length: any) => {
+    return Math.floor((Number(pageNumber) / length) * 100);
+  };
+
+  const widthOfProgress = calculateWidthOfProgress(pageNumber, state.questions.length);
+
+  useEffect(() => {
+    console.log("JobRequest useEffect!!!");
+  });
 
   return (
-    <div className="job-request">
-      <Header name={name} state={state} />
-      <ProgressBar />
-      <PriceDetail price={price} />
-      {discountRateText && <DiscountBanner discountRateText={discountRateText} />}
-      <Question question={question} />
-    </div>
+    <>
+      <div className="job-request">
+        <Header name={name} state={state} widthOfProgress={widthOfProgress} />
+        <ProgressBar widthOfProgress={widthOfProgress} />
+        <PriceDetail price={price} />
+        {discountRateText && pageNumber == 1 && <DiscountBanner discountRateText={discountRateText} />}
+        <Question question={state.questions} />
+      </div>
+      <StickyButton pageNumber={pageNumber} state={state} />
+    </>
   );
 };
 

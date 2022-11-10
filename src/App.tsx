@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import JobRequest from "./components/job-request/JobRequest";
-import ServiceList from "../src/components/service/List";
+import ServiceList from "./components/service/List";
 
 function App() {
   return (

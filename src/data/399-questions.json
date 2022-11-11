@@ -5,7 +5,7 @@
     "serviceId": 399,
     "label": "Nereye yapılacak?",
     "required": false,
-    "pageNumber": 0,
+    "pageNumber": 1,
     "values": [
       {
         "id": 2061,
@@ -90,7 +90,7 @@
     "order": 5,
     "required": false,
     "unit": null,
-    "pageNumber": 4,
+    "pageNumber": 3,
     "values": null,
     "placeHolder": "Aklına gelen başka önemli bir detay var mı?",
     "description": null

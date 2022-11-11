@@ -1,14 +1,17 @@
 import Values from "./Values";
 
 const Question = ({ question }: { question: any }) => {
-  const { label, values, placeHolder } = question;
-  console.log("question: ", question);
-  let typeId: any;
-  question.forEach((item: any) => {
-    typeId = item.typeId;
-  });
+  const { typeId, label, values, placeHolder } = question;
+  console.log("Question: ", question);
+  console.log("label: ", label);
+  console.log("values: ", values);
+  console.log("placeHolder: ", placeHolder);
+  // let typeId: any;
+  // question.forEach((item: any) => {
+  //   typeId = item.typeId;
+  // });
 
-  console.log("typeId: ", typeId);
+  // console.log("typeId: ", typeId);
 
   return (
     <div className="question">

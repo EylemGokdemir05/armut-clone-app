@@ -1,14 +1,34 @@
 import { useHistory } from "react-router";
+import { addAnswer, takeAnswerValue } from "../../helpers/answer";
 
-const StickyButton = ({ pageNumber, state, isLastPage }: { pageNumber: any; state: any; isLastPage: any }) => {
+const StickyButton = ({
+  pageNumber,
+  state,
+  isLastPage,
+  answers,
+  setAnswers,
+  question,
+}: {
+  pageNumber: any;
+  state: any;
+  isLastPage: any;
+  answers: any;
+  setAnswers: any;
+  question: any;
+}) => {
   const history = useHistory();
+  const { typeId, label } = question;
 
   const handleClickContinue = () => {
+    const answer = takeAnswerValue(typeId);
+    addAnswer(setAnswers, answer, label);
     history.push(`/request/${Number(pageNumber) + 1}`, state);
   };
 
   const sendRequest = () => {
-    history.push("/success");
+    const answer = takeAnswerValue(typeId);
+    answers = [...answers, { question: label, answer }];
+    history.push("/success", { answers });
   };
 
   return (

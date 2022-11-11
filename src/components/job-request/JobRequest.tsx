@@ -1,12 +1,12 @@
-import { useLocation, useParams } from "react-router-dom";
-import { useHistory } from "react-router";
+import { useLocation, useParams, useHistory } from "react-router-dom";
+import { useState, useEffect } from "react";
 import Header from "./Header";
 import ProgressBar from "./ProgressBar";
 import PriceDetail from "./PriceDetail";
 import DiscountBanner from "./DiscountBanner";
 import Question from "./question/Question";
 import StickyButton from "./StickyButton";
-import { useEffect } from "react";
+import { checkIsLastPage, calculateWidthOfProgress } from "../../helpers/page";
 
 interface ParamsState {
   pageNumber: any;
@@ -24,24 +24,20 @@ const JobRequest = () => {
   const { state } = location;
   const service = state.service;
   const { name, price, discountRateText } = service;
+  const [answers, setAnswers] = useState([]);
 
   if (!state) {
     history.goBack();
   }
+
   console.log(pageNumber);
   console.log("questions: ", state.questions);
-  //   const question = state.questions.filter((question: any) => question.pageNumber == pageNumber)[0];
-  //   console.log("question last: ", question);
-
-  const calculateWidthOfProgress = (pageNumber: any, length: any) => {
-    return Math.floor((Number(pageNumber) / length) * 100);
-  };
+  const question = state.questions.filter((question: any) => question.pageNumber == pageNumber)[0];
+  console.log("question last: ", question);
 
   const widthOfProgress = calculateWidthOfProgress(pageNumber, state.questions.length);
 
-  const checkIsLastPage = (pageNumber: any, length: any) => {
-    return pageNumber == length;
-  };
+  console.log("job answers: ", answers);
 
   const isLastPage = checkIsLastPage(pageNumber, state.questions.length);
 
@@ -56,9 +52,16 @@ const JobRequest = () => {
         <ProgressBar widthOfProgress={widthOfProgress} />
         <PriceDetail price={price} />
         {discountRateText && pageNumber == 1 && <DiscountBanner discountRateText={discountRateText} />}
-        <Question question={state.questions} />
+        <Question question={question} />
       </div>
-      <StickyButton pageNumber={pageNumber} state={state} isLastPage={isLastPage} />
+      <StickyButton
+        pageNumber={pageNumber}
+        state={state}
+        isLastPage={isLastPage}
+        answers={answers}
+        setAnswers={setAnswers}
+        question={question}
+      />
     </>
   );
 };

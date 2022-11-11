@@ -4,6 +4,8 @@ import RadioBox from "./RadioBox";
 const Values = ({ typeId, values, placeHolder }: { typeId: any; values: any; placeHolder: any }) => {
   let valuesHTML;
 
+  console.log("values: ", values);
+
   switch (typeId) {
     case 5:
       valuesHTML = (
@@ -26,7 +28,7 @@ const Values = ({ typeId, values, placeHolder }: { typeId: any; values: any; pla
     case 8:
       valuesHTML = (
         <div className="values medium lh-22 type-8">
-          <textarea placeholder={placeHolder}></textarea>
+          <textarea placeholder={placeHolder} name="detail"></textarea>
         </div>
       );
       break;

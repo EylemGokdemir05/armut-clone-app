@@ -71,7 +71,7 @@
     "typeId": 8,
     "serviceId": 262,
     "label": "İhtiyacın detayları neler?",
-    "required": false,
+    "required": true,
     "unit": null,
     "pageNumber": 4,
     "values": null,

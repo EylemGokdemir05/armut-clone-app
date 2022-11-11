@@ -88,7 +88,7 @@
     "serviceId": 399,
     "label": "İhtiyacın detayları neler?",
     "order": 5,
-    "required": false,
+    "required": true,
     "unit": null,
     "pageNumber": 3,
     "values": null,

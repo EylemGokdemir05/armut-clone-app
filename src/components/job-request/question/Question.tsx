@@ -1,6 +1,6 @@
 import Values from "./Values";
 
-const Question = ({ question }: { question: any }) => {
+const Question = ({ question, validate }: { question: any; validate: any }) => {
   const { typeId, label, values, placeHolder } = question;
   console.log("Question: ", question);
   console.log("label: ", label);
@@ -11,14 +11,14 @@ const Question = ({ question }: { question: any }) => {
   //   typeId = item.typeId;
   // });
 
-  // console.log("typeId: ", typeId);
+  console.log("typeId: ", typeId);
 
   return (
     <div className="question">
       <div className="question-label">
         <h1>{label}</h1>
       </div>
-      <Values typeId={typeId} values={values} placeHolder={placeHolder}></Values>
+      <Values values={values} typeId={typeId} placeHolder={placeHolder} validate={validate}></Values>
     </div>
   );
 };

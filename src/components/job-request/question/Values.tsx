@@ -1,7 +1,17 @@
 import ImageRadioBox from "./ImageRadioBox";
 import RadioBox from "./RadioBox";
 
-const Values = ({ typeId, values, placeHolder }: { typeId: any; values: any; placeHolder: any }) => {
+const Values = ({
+  typeId,
+  values,
+  placeHolder,
+  validate,
+}: {
+  typeId: any;
+  values: any;
+  placeHolder: any;
+  validate: any;
+}) => {
   let valuesHTML;
 
   console.log("values: ", values);
@@ -9,7 +19,7 @@ const Values = ({ typeId, values, placeHolder }: { typeId: any; values: any; pla
   switch (typeId) {
     case 5:
       valuesHTML = (
-        <div className="values medium lh-18 type-5">
+        <div className="medium lh-18 type-5">
           {values.map((value: any) => (
             <ImageRadioBox questionValue={value} key={value.id}></ImageRadioBox>
           ))}
@@ -18,7 +28,7 @@ const Values = ({ typeId, values, placeHolder }: { typeId: any; values: any; pla
       break;
     case 6:
       valuesHTML = (
-        <div className="values medium lh-18 type-6">
+        <div className="medium lh-18 type-6">
           {values.map((value: any) => (
             <RadioBox value={value.value} key={value.id}></RadioBox>
           ))}
@@ -27,15 +37,22 @@ const Values = ({ typeId, values, placeHolder }: { typeId: any; values: any; pla
       break;
     case 8:
       valuesHTML = (
-        <div className="values medium lh-22 type-8">
+        <div className="medium lh-22 type-8">
           <textarea placeholder={placeHolder} name="detail"></textarea>
         </div>
       );
       break;
     default:
-      valuesHTML = <div>Default</div>;
+      valuesHTML = <div>There is no type id!</div>;
   }
-  return <>{valuesHTML}</>;
+
+  console.log("valuesHTML: ", valuesHTML);
+  return (
+    <div className="values">
+      {valuesHTML}
+      {!validate.isValid && <p className="error-text">{validate.message}</p>}
+    </div>
+  );
 };
 
 export default Values;

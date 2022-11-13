@@ -29,5 +29,16 @@ export const validateAnswer = (answer: any, required: any) => {
   if (required && !answer) {
     return { isValid: false, message: "Bu alan zorunlu" };
   }
+  if (answer && getMeaninglessAnswer(answer)) {
+    return {
+      isValid: false,
+      message: `"${answer}" bu açıklama hizmet verenlerin ilgisini çekmeyecektir. Bu işi gerçekten yaptırmak istiyorsan daha ciddi ve türkçe kurallarına uygun yazmalısın`,
+    };
+  }
   return { isValid: true };
+};
+
+export const getMeaninglessAnswer = (answer: any) => {
+  const regex = /(.{1,2})\1{2,}|(...+)\2{1,}|[^aeiıoöuüç,.\s]{3,}/gi;
+  return regex.test(answer);
 };

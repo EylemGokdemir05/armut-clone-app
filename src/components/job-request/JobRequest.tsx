@@ -86,6 +86,12 @@ const JobRequest = () => {
     validationProcess();
   };
 
+  const goPrevious = () => {
+    answers.pop();
+    setValidate({ isValid: false, message: "" });
+    history.push(`/request/${Number(pageNumber) - 1}`, { state });
+  };
+
   const sendRequest = () => {
     setIsContinueButton(false);
     validationProcess();
@@ -94,7 +100,7 @@ const JobRequest = () => {
   return (
     <>
       <div className="job-request">
-        <Header name={name} state={state} widthOfProgress={widthOfProgress} />
+        <Header name={name} goPrevious={goPrevious} widthOfProgress={widthOfProgress} />
         <ProgressBar widthOfProgress={widthOfProgress} />
         <PriceDetail price={price} />
         {discountRateText && pageNumber == 1 && <DiscountBanner discountRateText={discountRateText} />}

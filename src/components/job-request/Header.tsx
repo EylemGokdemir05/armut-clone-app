@@ -5,17 +5,13 @@ interface ParamsState {
   pageNumber: any;
 }
 
-const Header = ({ name, state, widthOfProgress }: { name: any; state: any; widthOfProgress: any }) => {
+const Header = ({ name, widthOfProgress, goPrevious }: { name: any; widthOfProgress: any; goPrevious: any }) => {
   const history = useHistory();
   const params = useParams<ParamsState>();
   const pageNumber = params.pageNumber;
 
   const handleClose = () => {
     history.push("/");
-  };
-
-  const goPrevious = () => {
-    history.push(`/request/${Number(pageNumber) - 1}`, { state });
   };
 
   return (

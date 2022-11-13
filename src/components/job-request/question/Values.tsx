@@ -37,9 +37,7 @@ const Values = ({
       break;
     case 8:
       valuesHTML = (
-        <div className="medium lh-22 type-8">
-          <textarea placeholder={placeHolder} name="detail"></textarea>
-        </div>
+        <textarea placeholder={placeHolder} name="detail" className={!validate.isValid ? "error-input" : ""}></textarea>
       );
       break;
     default:

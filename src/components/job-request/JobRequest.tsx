@@ -39,13 +39,17 @@ const JobRequest = () => {
     history.goBack();
   }
 
-  const service = state.service;
+  console.log("state: ", state);
+  // const service = state.service;
+
+  const { service, questions } = state;
+  console.log("service: ", service);
+  console.log("questions: ", questions);
   const { name, price, discountRateText } = service;
 
   console.log(pageNumber);
-  console.log("questions: ", state.questions);
 
-  const question = state.questions.filter((question: any) => question.pageNumber == pageNumber)[0];
+  const question = questions.filter((question: any) => question.pageNumber == pageNumber)[0];
   console.log("question last: ", question);
 
   const { typeId, label, required } = question;
@@ -66,7 +70,7 @@ const JobRequest = () => {
         addAnswer(setAnswers, label, answer);
         history.push(`/request/${Number(pageNumber) + 1}`, state);
       } else {
-        //answers = [...answer, { question: label, answer }];
+        // answers = [...answer, { question: label, answer }];
         history.push("/success", { answers });
       }
     }
@@ -89,7 +93,7 @@ const JobRequest = () => {
   const goPrevious = () => {
     answers.pop();
     setValidate({ isValid: false, message: "" });
-    history.push(`/request/${Number(pageNumber) - 1}`, { state });
+    history.push(`/request/${Number(pageNumber) - 1}`, state);
   };
 
   const sendRequest = () => {

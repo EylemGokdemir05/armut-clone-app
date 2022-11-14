@@ -39,38 +39,24 @@ const JobRequest = () => {
     history.goBack();
   }
 
-  console.log("state: ", state);
-  // const service = state.service;
-
   const { service, questions } = state;
-  console.log("service: ", service);
-  console.log("questions: ", questions);
   const { name, price, discountRateText } = service;
 
-  console.log(pageNumber);
-
   const question = questions.filter((question: any) => question.pageNumber == pageNumber)[0];
-  console.log("question last: ", question);
 
   const { typeId, label, required } = question;
 
   const widthOfProgress = calculateWidthOfProgress(pageNumber, state.questions.length);
 
-  console.log("job answers: ", answers);
-
   const isLastPage = checkIsLastPage(pageNumber, state.questions.length);
 
   useEffect(() => {
-    console.log("validate: ", validate);
     if (validate.isValid) {
-      console.log("isContinueButton: ", isContinueButton);
       answer = takeAnswerValue(typeId);
-      console.log("answer1: ", answer);
       if (isContinueButton) {
         addAnswer(setAnswers, label, answer);
         history.push(`/request/${Number(pageNumber) + 1}`, state);
       } else {
-        // answers = [...answer, { question: label, answer }];
         history.push("/success", { answers });
       }
     }
@@ -78,11 +64,8 @@ const JobRequest = () => {
 
   const validationProcess = () => {
     answer = takeAnswerValue(typeId);
-    console.log("answer2: ", answer);
     const { isValid, message } = validateAnswer(answer, required);
-    console.log("message: ", message);
     setValidate({ ...validate, isValid });
-    // setValidate({ ...validate, isValid, message });
   };
 
   const handleClickContinue = () => {

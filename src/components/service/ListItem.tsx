@@ -18,12 +18,8 @@ const ListItem = ({ service }: { service: any }) => {
       questions = [];
   }
 
-  console.log("service: ", service);
-  console.log("questions: ", questions);
-
   const handleClickService = () => {
     history.push("/request/1", { service, questions });
-    console.log("JobRequest handleClickService!!!");
   };
 
   return (

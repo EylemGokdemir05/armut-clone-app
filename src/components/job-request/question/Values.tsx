@@ -14,8 +14,6 @@ const Values = ({
 }) => {
   let valuesHTML;
 
-  console.log("values: ", values);
-
   switch (typeId) {
     case 5:
       valuesHTML = (
@@ -44,7 +42,6 @@ const Values = ({
       valuesHTML = <div>There is no type id!</div>;
   }
 
-  console.log("valuesHTML: ", valuesHTML);
   return (
     <div className="values">
       {valuesHTML}

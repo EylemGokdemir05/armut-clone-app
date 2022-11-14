@@ -2,16 +2,6 @@ import Values from "./Values";
 
 const Question = ({ question, validate }: { question: any; validate: any }) => {
   const { typeId, label, values, placeHolder } = question;
-  console.log("Question: ", question);
-  console.log("label: ", label);
-  console.log("values: ", values);
-  console.log("placeHolder: ", placeHolder);
-  // let typeId: any;
-  // question.forEach((item: any) => {
-  //   typeId = item.typeId;
-  // });
-
-  console.log("typeId: ", typeId);
 
   return (
     <div className="question">

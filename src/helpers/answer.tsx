@@ -13,7 +13,6 @@ const getDetail = () => {
 };
 
 export const takeAnswerValue = (questionType: number) => {
-  console.log("questionType: ", questionType);
   switch (questionType) {
     case 5:
     case 6:
